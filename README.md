@@ -19,7 +19,7 @@ Keep in mind that I'm new to coding, and this is my first real project. I'm stil
 - Requests
 - PyQt5
 
-## Installation
+## Installing Dependencies
 ```bash
 pip install -r requirements.txt
 ```
