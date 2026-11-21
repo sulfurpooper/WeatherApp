@@ -1,3 +1,4 @@
+import os
 import sys
 import requests 
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton, QVBoxLayout
@@ -63,11 +64,17 @@ class WeatherApp(QWidget):
 
     def get_weather(self):
         city = self.city_input.text().capitalize().strip()
-        request = requests.get(f"https://api.weatherapi.com/v1/forecast.json?key=YOUR_API_KEY_HERE&q={city}&days=3&aqi=no&alerts=yes")
+        api_key = os.getenv("WEATHER_API_KEY")
+
+        if not api_key:
+            self.temp_label.setText("API key not configured!")
+            return
+
+        request = requests.get(f"https://api.weatherapi.com/v1/forecast.json?key={api_key}&q={city}&days=3&aqi=no&alerts=yes")
         self.data = request.json()
         tempeture = self.data["current"]["temp_c"]
         self.temp_label.setText(str(f"{tempeture}°C"))
-
+    
     def describe_weather(self):
         local_time = self.data["location"]["localtime"]
         hour_minute = local_time[11:16]
