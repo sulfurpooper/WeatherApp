@@ -20,7 +20,7 @@ Keep in mind that I'm new to coding, and this is my first real project. I'm stil
 - PyQt5
 
 ## Installation
-```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -34,16 +34,25 @@ To use the application:
 2. Get your personal API key from your dashboard.
 3. Set an environment variable named `WEATHER_API_KEY` containing your API key.
 
-### Windows PowerShell
-
-```
+### Windows (PowerShell)
+```powershell
 $env:WEATHER_API_KEY="YOUR_API_KEY"
 ```
 
-**Note:** You need your own API key to run the application. The environment variable must be set each time you open a new PowerShell session. Do not share your API key publicly.
+### Linux (Terminal)
+```bash
+export WEATHER_API_KEY="YOUR_API_KEY"
+```
+
+### macOS (Terminal)
+```bash
+export WEATHER_API_KEY="YOUR_API_KEY"
+```
+
+**Note:** You need your own API key to run the application. The environment variable must be set each time you open a new terminal session. Do not share your API key publicly.
 
 ## Usage
-```
+```bash
 python main.py
 ```
 
