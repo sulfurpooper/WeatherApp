@@ -23,16 +23,24 @@ Keep in mind that I'm new to coding, and this is my first real project. I'm stil
 ```
 pip install -r requirements.txt
 ```
+
 ## API Key Setup
 
 This project uses [WeatherAPI](https://www.weatherapi.com/) to retrieve weather information.
 
 To use the application:
+
 1. Create a free account at [WeatherAPI.com](https://www.weatherapi.com/signup).
 2. Get your personal API key from your dashboard.
-3. Add your API key to the application where indicated in `main.py`.
+3. Set an environment variable named `WEATHER_API_KEY` containing your API key.
 
-**Note:** You need your own API key to run the application. Do not share your API key publicly.
+### Windows PowerShell
+
+```
+$env:WEATHER_API_KEY="YOUR_API_KEY"
+```
+
+**Note:** You need your own API key to run the application. The environment variable must be set each time you open a new PowerShell session. Do not share your API key publicly.
 
 ## Usage
 ```
